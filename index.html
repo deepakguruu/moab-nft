@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My DApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>MOAB Shares</h1>
+    <div class="wallet-container">
+      <button id="connect-wallet-btn" >Connect Wallet</button>
+      <button id="disconnect-wallet-btn" style="display: none;">Disconnect Wallet</button>
+    </div>
+    <div class="content bal-container">
+      <div class="item">
+        <p>Wallet Balance: <span id="wallet-balance">-</span> USDT</p>
+      </div>
+      <div class="item">
+        <p>Share Price: <span id="mintPrice">-</span> USDT</p>
+      </div>
+      <div class="item">
+        <p>Share Balance: <span id="balance">-</span> Shares</p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="item">
+        <h3>Mint Shares</h3>
+        <div class="input-container">
+          <input type="number" id="numShares" placeholder="Number of Shares" min="1">
+          <button id="mintBtn" >Mint</button>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Sell Shares</h3>
+        <div class="input-container">
+          <input type="number" id="numSharesSell" placeholder="Number of Shares" min="1">
+          <button id="sellBtn" >Sell</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="loading-modal">
+      <div class="modal-content">
+        <div class="loader"></div>
+        <p class="loading-modal-message">Alert message.</p>
+      </div>
+    </div>
+    <div class="alert-modal" id="alertModal">
+      <div class="alert-modal-content">
+        <span class="alert-close">&times;</span>
+        <h2 class="alert-modal-title">Alert</h2>
+        <p class="alert-modal-message">Alert message.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+  <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
